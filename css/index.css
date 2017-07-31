@@ -1,0 +1,129 @@
+header{
+    height: 100px;
+    display: -webkit-box;
+    position:fixed;
+    top:0;
+    z-index: 2;
+    width: 100%;
+    background: #ffffff;
+}
+#menu{
+    height: 100%;
+    -webkit-box-flex:5;
+    padding: 0 15px;
+    position:relative;
+}
+#menu img{
+    cursor:pointer;
+    display: block;
+    width: 40px;
+    height: 25px;
+}
+#menu span{
+    cursor:pointer;
+    font-size: 12px;
+    display:block;
+    width: 40px;
+    text-align: center;
+}
+#menu .container{
+   height: 47px;
+    position: absolute;
+    top:50%;
+    transform: translate(0,-50%);
+}
+#club{
+    height: 100%;
+    -webkit-box-flex:5;
+    padding: 0 15px;
+    position: relative;
+}
+#club .container{
+    height: 47px;
+    position: absolute;
+    top:50%;
+    right: 15px;
+    transform: translate(0,-50%);
+}
+#club p{
+    text-align: center;
+    color:#4e4e4e;
+    width: 100px;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+}
+#club p a{
+    cursor:pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color:#b89f7a;
+}
+#title{
+    height: 100%;
+    -webkit-box-flex:2;
+    position: relative;
+}
+#title img{
+    cursor: pointer;
+    width: 73px;
+    display:block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+/*********华丽的分割线*************/
+figure{
+    padding-top: 100px;
+    background: #cccccc;
+    position: relative;
+    width: 100%;
+}
+figure img{
+    width: 100%;
+    display: block;
+}
+figure span:first-of-type{
+    display: block;
+    position:absolute;
+    padding: 0 5px;
+    top:120px;
+    right:32px;
+    background: #47474A;
+    color:rgba(255,255,255,0.7);
+    font-size: 12px;
+    font-weight: 900;
+}
+figure span:last-of-type{
+    display: block;
+    position:absolute;
+    right: 25px;
+    bottom:20px;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 400;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
