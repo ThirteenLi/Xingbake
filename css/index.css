@@ -105,6 +105,35 @@ figure span:last-of-type{
     font-weight: 400;
     cursor:pointer;
 }
+/********华丽的分割线*****************/
+#login{
+    height: 220px;
+    background: #0F0F0F;
+}
+#login .wrapper{
+    width: 75%;
+    margin: 0 auto;
+}
+#login .left{
+    background:#6cf url("../img/black.png") no-repeat;
+    background-size: cover;
+    padding-left: 90px;
+    width: 260px;
+    height: 220px;
+    overflow: hidden;
+}
+#login .left p{
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    color:#fff;
+    margin-top: 96px;
+}
+#login .left img{
+    width: 160px;
+    display:block;
+    cursor:pointer;
+}
 
 
 
