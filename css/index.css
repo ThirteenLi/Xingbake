@@ -189,27 +189,6 @@ figure span:last-of-type{
     color:#a98e67;
 }
 /***********华丽的分割线*****************/
-#download .wrapper{
-    display: flex;
-    height: 220px;
-    width: 90%;
-    margin: 0 auto;
-}
-#download .left{
-    margin-top: 20px;
-    width: 350px;
-    background: url("../img/app_device.png") no-repeat;
-    background-size: contain;
-    background-position-x:center;
-}
-#download .center{
-    width: 242px;
-    background: #cccccc;
-}
-#download .right{
-    flex-grow: 1;
-    background: #6cf;
-}
 
 
 
