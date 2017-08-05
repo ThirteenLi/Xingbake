@@ -79,20 +79,20 @@ header{
 
 
 /*********华丽的分割线*************/
-figure{
+#three{
     padding-top: 100px;
     background: #cccccc;
     position: relative;
     width: 100%;
 }
-figure img:nth-child(1){
+#three img:nth-child(1){
     width: 100%;
     display: block;
 }
-figure img:nth-child(2){
+#three img:nth-child(2){
     display: none;
 }
-figure span:first-of-type{
+#three span:first-of-type{
     display: block;
     position:absolute;
     padding: 0 5px;
@@ -103,7 +103,7 @@ figure span:first-of-type{
     font-size: 12px;
     font-weight: 900;
 }
-figure span:last-of-type{
+#three span:last-of-type{
     display: block;
     position:absolute;
     right: 25px;
@@ -189,6 +189,78 @@ figure span:last-of-type{
     color:#a98e67;
 }
 /***********华丽的分割线*****************/
+#app{
+    height: 200px;
+    background: url("../img/app_bg.gif");
+}
+#app .wrapper{
+    margin: 0 auto;
+    overflow: hidden;
+    width: 90%;
+    position: relative;
+    height: 100%;
+}
+#app .app-device{
+    margin-top: 20px;
+    width: 350px;
+    height: 200px;
+    float: left;
+    background: url("../img/app_device.png") no-repeat center;
+    background-size:contain;
+}
+#app .app-download{
+    float: left;
+    width: 242px;
+    height: 200px;
+}
+#app .app-download img{
+    width: 124px;
+    display: block;
+}
+#app .app-download p{
+    text-align: left;
+    width: 70px;
+    color:#3d3d3d;
+    font-size: 13px;
+    border-left: 1px solid #3d3d3d;
+    float: right;
+    margin-top: 20px;
+}
+
+#app .app-content{
+    padding-top: 50px;
+    font-size: 24px;
+    font-weight: 400;
+    color:#3d3d3d;
+}
+#app .know-more{
+    font-size: 14px;
+    color:#b89f7a;
+    margin-left: 30px;
+    position: absolute;
+    bottom: 10px;
+    right:5px;
+}
+#app .know-more:hover{
+    color:#a98e67;
+}
+/********华丽的分割线**********/
+#pic img:first-child{
+    display: block;
+    width: 100%;
+}
+#pic img:last-child{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -264,14 +336,51 @@ figure span:last-of-type{
         text-align: right;
         line-height: 78px;
     }
+    /*******小分割线******/
+    #app{
+        height: 250px;
+    }
+    #app .app-download{
+        margin-top: 50px;
+    }
+    #app .wrapper .app-content{
+        position:absolute;
+        top:0;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+        font-size: 20px;
+    }
+    #app .wrapper .app-device{
+        margin-top: 50px;
+    }
+    #pic img:first-child{
+        display: none;
+    }
+    #pic img:last-child{
+        display: block;
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
 }
+
 @media(max-width:991px){
-    figure img:nth-child(2){
+    #three img:nth-child(2){
         width: 100%;
         display: block;
     }
-    figure img:nth-child(1){
+    #three img:nth-child(1){
         display: none;
+    }
+    #app .wrapper{
+        width: 100%;
     }
 }
 @media(max-width:426px){
