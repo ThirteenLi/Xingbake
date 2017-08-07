@@ -353,6 +353,7 @@ header{
     }
     #app .wrapper .app-device{
         margin-top: 50px;
+        width: 200px;
     }
     #pic img:first-child{
         display: none;
