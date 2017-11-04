@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id=app>
+        <button @click.once="add(2)">请单击这里</button>
+        <div>
+            当前单机按钮次数:{{count}}
+        </div>
+        <div v-on="{mousedown:doThis,mouseup:doThat}">
+            {{click}}
+        </div>
+        <a href="http://www.baidu.com" @click.prevent="baiduHandler()">baidu</a>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                count:0,
+                click:"button"
+            },
+            methods:{
+                add(num){
+                    this.count+=num;
+                },
+                doThis(){
+                   console.log('this');
+                },
+                doThat(){
+                   console.log('that');
+                },
+                baiduHandler(){
+                    // e.preventDefault();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

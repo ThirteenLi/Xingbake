@@ -252,11 +252,36 @@ header{
 #pic img:last-child{
     display: none;
 }
-
-
-
-
-
+/**********华丽的分割线**********/
+#twice{
+    width: 100%;
+}
+#twice .left,#twice .right{
+    width: 50%;
+    float: left;
+    position:relative;
+}
+#twice img{
+    width: 100%;
+    display: block;
+}
+#twice h2{
+    color:#fff;
+    position: absolute;
+    bottom:50px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+}
+#twice h3{
+    position: absolute;
+    bottom: 20px;
+    color:#a98e67;
+    font-size: 13px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+}
 
 
 

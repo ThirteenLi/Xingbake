@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{msg}}
+        <div v-if="isLogin">欢迎你:宏磊</div>
+        <div v-else>请登录</div>
+        <div v-if="type=='A'">A</div>
+        <div v-else-if="type == 'B'">B</div>
+        <div v-else>C</div>
+        <div v-show="isShow">show</div>
+    </div> -->
+    <div id="div1">
+        <ul>
+            <li v-for="(book,index) in booklist" :key="index">
+                {{book}}--{{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="num in arr">
+                {{num}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="num in sortArr">
+                {{num}}
+            </li> 
+        </ul>
+        <ul>
+            <li v-for="(key,value,index) in student" :key="index">
+                {{key}}:{{value}}--{{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="user in users">
+               {{user.name}}--{{user.age}}--{{user.school}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="user in sortUser">
+                {{user.name}}--{{user.age}}--{{user.school}}
+            </li>
+        </ul>
+    </div>
+    <div id="div2">
+        <div>
+            {{msg}}
+        </div>
+        <div v-text="msg"></div>
+        <div v-text="msg2"></div>
+        <div v-html="msg2"></div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                msg:'Hello World!',
+                isLogin:true,
+                type:'B',
+                isShow:true
+            }
+        });
+        var vmdiv1= new Vue({
+            el:"#div1",
+            data:{
+                booklist:['一人之下','狂想曲','全职高手'],
+                arr:[1,4,8,6,55,25,14,3],
+                student:{
+                    name:'lihonglei',
+                    age:20,
+                    id:1514010912
+                },
+                users: [
+                    {
+                        name: 'zhangsan',
+                        age: 17,
+                        school: '黑大'
+                    }, {
+                        name: 'lisi',
+                        age: 20,
+                        school: '农大'
+                    }, {
+                        name: 'wangwu',
+                        age: 15,
+                        school: '林大'
+                    }
+                ]
+            },
+            //计算属性
+            computed:{
+                sortArr:function(){
+                    return this.arr.sort(function(a,b){
+                        return b-a;
+                    });
+                },
+                sortUser: function(){
+                    return this.users.sort(function(a, b){
+                        return b.age - a.age;
+                    });
+                }
+            }
+        });
+            var vmdiv2= new Vue({
+                el:"#div2",
+                data:{
+                    msg:"Hello World",
+                    msg2:"<h1>Hello World!!!</h1>"
+                }
+            });
+    </script>
+</body>
+</html>

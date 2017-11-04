@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #app{
+            margin: 100px auto;
+            width: 400px;
+        }
+        #list li{
+            list-style: none;
+            margin-top:10px;
+            height: 50px;
+            background: #ccc;
+            line-height: 50px;
+            padding: 0 10px;
+        }
+        #title{
+            width: 400px;
+            text-align: center;
+            border-bottom:1px solid #222;
+        }
+        #list{
+            width: 400px;
+            
+        }
+        #list .red{
+            background: #6cf;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .close{
+            float: left;
+            cursor: pointer;
+            background: #f00;
+            border-radius: 50%;
+            margin: 15px 15px 0 0;
+            height: 20px;
+            width: 20px;
+            font-size: 18px;
+            font-weight: 900;
+            color:#fff;
+            display: block;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id=app>
+        <h1 id=title>
+            {{title}}
+        </h1>
+        <ul id=list>
+            <li v-for="(book,index) in list" :class="{red:book.isred}" @click="select(book)">
+                    <input type="checkbox" @click.stop="" v-model="checked" :value="index">
+                    <span class="close" @click.stop="del(index)">-</span>
+                    <span :class="{left:isleft}">{{book.name}}</span>
+                    <span :class="{right:isright}">{{book.price}}</span>
+            </li>
+        </ul>
+        <div id=total>
+            总价:{{total}}
+        </div>
+        <label>书名:<input type="text" v-model="bookname" placeholder="请输入书名"></label>
+        <label>价格:<input type="number" v-model="bookprice"></label>
+        <button @click="add()">增加新书</button>
+        <button @click="deleteAll()">删除所选</button>
+        <label>搜索:<input type="text" v-model="keywords"></label>
+        <button @click="search()">百度一下</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                bookname:'',
+                bookprice:0,
+                checked:[],
+                title:'todolist',
+                total:0,
+                list:[{
+                    name:'一人之下',
+                    price:128,
+                    isred:false
+                },{
+                    name:'九九八十一',
+                    price:52,
+                    isred:false
+                },{
+                    name:'零之使魔',
+                    price:63,
+                    isred:false
+                },{
+                    name:'罪恶王冠',
+                    price:110,
+                    isred:false
+                },{
+                    name:'弹丸论破',
+                    price:94,
+                    isred:false
+                }],
+                isleft:true,
+                isright:true,
+                keywords:''
+            },
+            methods:{
+                select(book){
+                    book.isred=!book.isred;
+                    this.sum();
+                },
+                sum(){
+                    var sum=0;
+                    this.list.forEach(function(element){
+                        if(element.isred){
+                            // sum+=parseInt(element.price);
+                            sum+=element.price;
+                        }
+                    });
+                    this.total=sum;
+                },
+                add(){
+                    this.list.push({
+                        name:this.bookname,
+                        price:this.bookprice,
+                        isred:false,
+                        ischecked:false
+                    });
+                    this.bookname='';
+                    this.bookprice=0;
+                },
+                del(idx){
+                  this.list.splice(idx,1);
+                },
+                deleteAll(){
+                    let arr=[];
+                    this.list.forEach(function(element,index){
+                        if(!this.checked.includes(index)){
+                            arr.push(element);
+                        }
+                    }.bind(this));
+                    this.list=arr;
+                    this.checked=[];
+                },
+                search(){
+                    this.list.forEach(function(element,index){
+                        if(element.name.indexOf(this.keywords)!=-1){
+                            element.isred=true;
+                        }else{
+                            element.isred=false;
+                        }
+                    }.bind(this));
+                    this.keywords='';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
